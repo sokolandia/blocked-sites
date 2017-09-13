@@ -26,6 +26,7 @@ app.get('/scraping', function(req, res) {
                 alink.each(function( index ) {
 
                     var href = $(this).attr('href');
+                    if (!href) return;
                     var link = parseURL(href);
 
                     if( links.length > 0 && link != 'undefined') {
